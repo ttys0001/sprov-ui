@@ -229,7 +229,7 @@ install_sprov-ui() {
     fi
     last_version=$(curl --silent "https://api.github.com/repos/mikewubox/sprov-ui/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
     echo -e "检测到sprov-ui最新版本：${last_version}，开始下载核心文件"
-    wget -N --no-check-certificate -O /usr/local/sprov-ui/sprov-ui.jar https://github.com/mikewubox/sprov-ui/raw/master/sprov-ui.jar
+    wget -N --no-check-certificate -O /usr/local/sprov-ui/sprov-ui.jar https://github.com/ttys0001/sprov-ui/raw/master/sprov-ui.jar
     if [[ $? -ne 0 ]]; then
         echo -e "${red}下载sprov-ui核心文件失败，请确保你的服务器能够下载Github的文件，如果多次安装失败，请参考手动安装教程${plain}"
         exit 1
@@ -254,10 +254,10 @@ install_sprov-ui() {
     echo -e "------------------------------------------"
     echo -e ""
     echo -e "若未下载管理脚本，使用以下命令下载管理脚本:"
-    echo -e "wget -O /usr/bin/sprov-ui -N --no-check-certificate https://github.com/mikewubox/sprov-ui/raw/master/sprov-ui.sh && chmod +x /usr/bin/sprov-ui"
+    echo -e "wget -O /usr/bin/sprov-ui -N --no-check-certificate https://github.com/ttys0001/sprov-ui/raw/master/sprov-ui.sh && chmod +x /usr/bin/sprov-ui"
     echo -e ""
     echo -e "若未安装 bbr 等加速工具，推荐使用以下命令一键安装 bbr："
-    echo -e "wget --no-check-certificate https://github.com/mikewubox/sprov-ui/raw/master/bbr.sh && bash bbr.sh"
+    echo -e "wget --no-check-certificate https://github.com/ttys0001/sprov-ui/raw/master/bbr.sh && bash bbr.sh"
     echo -e ""
 }
 
